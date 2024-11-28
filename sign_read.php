@@ -1,7 +1,6 @@
 <?php
-include 'db.php'; // Pastikan path ke file benar
-
-// Pastikan koneksi database berhasil
+include 'db.php';  
+ 
 if (!$conn) {
     die("Koneksi database gagal: " . mysqli_connect_error());
 }
