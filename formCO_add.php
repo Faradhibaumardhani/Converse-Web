@@ -2,7 +2,6 @@
 require 'db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Ambil dan trim data dari form
     $name = trim($_POST['name']);
     $address = trim($_POST['address']);
     $city = trim($_POST['city']);
@@ -11,18 +10,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $color = trim($_POST['color']);
     $notes = trim($_POST['notes']);
 
-    // Validasi: Pastikan semua field diisi
     if (empty($name) || empty($address) || empty($city) || empty($number) || empty($size) || empty($color) || empty($notes)) {
         echo "Semua field wajib diisi!";
         exit();
     }
 
-    // Debugging: Periksa data yang diterima
     echo "<pre>";
     var_dump($_POST);
     echo "</pre>";
 
-    // Query untuk menambahkan data ke tabel
     $stmt = $conn->prepare("INSERT INTO form_co (name, address, city, number, size, color, notes) VALUES (?, ?, ?, ?, ?, ?, ?)");
     if ($stmt === false) {
         die("Gagal menyiapkan statement: " . $conn->error);
@@ -31,7 +27,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bind_param('sssssss', $name, $address, $city, $number, $size, $color, $notes);
 
     if ($stmt->execute()) {
-        // Redirect ke halaman daftar data setelah berhasil
         header('Location: formCO_read.php');
         exit();
     } else {
