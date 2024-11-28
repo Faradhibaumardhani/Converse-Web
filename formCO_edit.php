@@ -1,21 +1,18 @@
 <?php
 require 'db.php';
 
-// Validasi ID dari URL
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     die("ID tidak valid atau tidak ada.");
 }
 
 $id = (int) $_GET['id'];
 
-// Ambil data dari database
 $result = $conn->query("SELECT * FROM form_co WHERE id = $id");
 if ($result->num_rows === 0) {
     die("Data tidak ditemukan.");
 }
 $data = $result->fetch_assoc();
 
-// Proses update data
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST['name'];
     $address = $_POST['address'];
@@ -29,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bind_param('sssssssi', $name, $address, $city, $number, $size, $color, $notes, $id);
 
     if ($stmt->execute()) {
-        header('Location: read.php'); // Redirect ke halaman list data
+        header('Location: read.php'); 
         exit();
     } else {
         echo "Gagal mengupdate data: " . $stmt->error;
