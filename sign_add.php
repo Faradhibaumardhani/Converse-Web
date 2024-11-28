@@ -1,47 +1,36 @@
 <?php
-// Pastikan file 'db.php' di-include dan koneksi database berhasil
-include 'db.php'; // Periksa lokasi file ini
+include 'db.php'; 
 
-// Periksa apakah form telah disubmit
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Ambil data dan bersihkan (sanitize)
     $email = trim($_POST['email']);
     $password = $_POST['password'];
 
-    // Validasi input
+    
     if (empty($email) || empty($password)) {
         echo "Email atau password tidak boleh kosong.";
         exit;
     }
 
-    // Hash password
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    // Query untuk memasukkan data
     $query = "INSERT INTO sign_up (email, password) VALUES (?, ?)";
     $stmt = mysqli_prepare($koneksi, $query);
 
-    // Periksa apakah statement berhasil dipersiapkan
     if ($stmt) {
-        // Bind parameter dan eksekusi query
         mysqli_stmt_bind_param($stmt, "ss", $email, $hashed_password);
 
-        // Eksekusi query
         if (mysqli_stmt_execute($stmt)) {
             echo "Registrasi berhasil!";
             echo '<br><a href="sign_read.php">Lihat Data</a>';
         } else {
-            // Menampilkan error jika query gagal
             echo "Gagal menyimpan data: " . mysqli_error($koneksi);
         }
 
-        // Tutup statement
         mysqli_stmt_close($stmt);
     } else {
         echo "Gagal mempersiapkan query: " . mysqli_error($koneksi);
     }
 
-    // Tutup koneksi
     mysqli_close($koneksi);
 } else {
     echo "Form belum disubmit.";
