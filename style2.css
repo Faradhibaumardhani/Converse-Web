@@ -1,0 +1,142 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* set the body height to the viewport height */
+    display: flex;
+    flex-direction: column;;
+}
+
+.button {
+    width: 700px;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 0;
+}
+
+.navbar {
+    display: flex;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    height: 100px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-collapse {
+    background-color: rgba(255, 253, 253, 0); 
+    padding: 2px;
+}
+
+
+.navbar-logo img {
+    display: flex;
+    max-height: 130px;   
+    width: auto;
+    margin-bottom: 3px;
+}
+
+.navbar-toggler {
+    display: flex;
+    padding: 0;
+    margin-left: auto;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.navbar-toggler-icon {
+    display: flex;
+    justify-content: center;
+    width: 15px;
+    height: 2px;
+    display: block;
+    margin: 5px 0;
+    align-items: center;
+}
+
+main {
+    padding-bottom: 60px; /* Menambahkan ruang di bawah main agar footer tidak menutupi konten */
+}
+
+.container {
+    flex: 1; /* make the container take up the remaining space */
+}
+  
+footer {
+    background-color: #000000;
+    text-align: center;
+    padding: 10px;
+}
+
+.text-footer {
+    color: #f8f9fa;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;  
+    align-items: center;  
+    padding: 0 20px;  
+}
+  
+h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 24px;  
+}
+  
+.cart-icon {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+  
+.cart-icon svg {
+    width: 30px;  
+    height: 30px;
+}
+  
+.badge {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+  
+
+p {
+    color: #000;
+    text-align: center;
+}
+
+.bi-person {
+    margin-bottom: 3px;
+    margin-top: 2px;
+}
+
+.bi-seacrh {
+    margin-bottom: 3px;
+}
+
+.bi-basket2-fill {
+    text-decoration: none;
+}
+
+.btn {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+h2 {
+    text-align: left;
+}
+
+h5 {
+    text-align: left;
+}

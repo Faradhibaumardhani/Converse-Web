@@ -1,0 +1,177 @@
+* {
+    touch-action: none;
+}
+
+/* Gaya untuk section form */
+.checkout-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: white;
+    padding: 20px;
+}
+
+/* Container form */
+.checkout-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+.checkout-container h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #000000;
+    font-family: 'Arial', sans-serif;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #000000;
+    font-family: 'Arial', sans-serif;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px; 
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: black;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Tombol Submit */
+.submit-btn {
+    width: 104%;
+    padding: 15px;
+    background-color: #000000;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    justify-content: center;
+    align-content: center;
+}
+
+.submit-btn:hover {
+    background-color: #ffb700;
+}
+
+#cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#cart-table th,
+#cart-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+#cart-table th {
+    background: #f4f4f4;
+    font-weight: bold;
+    color: #555;
+}
+
+#cart-table td {
+    vertical-align: middle;
+}
+
+#cart-table .remove-btn {
+    background: #f44336;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#cart-table .remove-btn:hover {
+    background: #d32f2f;
+}
+
+/* Tombol checkout */
+button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* Total cart */
+#cart-total {
+    font-size: 18px;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-top: 15px;
+    display: inline-block;
+}
+
+/* Responsive desain */
+@media (max-width: 768px) {
+    #checkout-form {
+        padding: 10px;
+    }
+
+    #cart-table th,
+    #cart-table td {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+
+@media (max-width: 768px) {
+    .checkout-container {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    .form-group {
+        flex-direction: column;
+    }
+}}

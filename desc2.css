@@ -1,0 +1,145 @@
+html, body {
+    height: 100%; /* Memastikan body dan html mengambil seluruh tinggi */
+    margin: 0; /* Menghilangkan margin default */
+}
+
+body {
+    display: flex; /* Menggunakan flexbox */
+    flex-direction: column; /* Mengatur orientasi flex menjadi kolom */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    flex: 1; /* Mengambil semua ruang yang tersedia */
+}
+
+.navbar {
+    display: flex;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    height: 100px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-collapse {
+    background-color: rgb(255, 253, 253); 
+    padding: 2px;
+    width: 10px 0;
+}
+
+.navbar-logo img {
+    display: flex;
+    max-height: 130px;   
+    width: auto;
+    margin-bottom: 3px;
+}
+
+.navbar-toggler {
+    display: flex;
+    padding: 0;
+    margin-left: auto;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.navbar-toggler-icon {
+    display: flex;
+    justify-content: center;
+    width: 15px;
+    height: 2px;
+    display: block;
+    margin: 5px 0;
+    align-items: center;
+}
+
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.bi-person {
+    margin-bottom: 3px;
+    margin-top: 2px;
+}
+
+.bi-seacrh {
+    margin-bottom: 3px;
+}
+
+.bi-cart {
+    margin-bottom: 3px;
+}
+
+h2 {
+    text-align: left;
+}
+
+.product-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.product-price {
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+.product-description {
+    font-size: 14px;
+    color: #666;
+    text-align: justify;
+}
+
+.color-options img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.carousel {
+    margin-left: 30px; /* Pastikan carousel tetap di tengah secara horizontal */
+    margin-right: 30px; /* Pastikan carousel tetap di tengah secara horizontal */
+    margin-top: 20px;
+}
+
+.carousel-item img {
+    max-width: 600%; /* Membuat gambar selalu mengisi container carousel */
+    height: auto;    /* Menjaga proporsi gambar */
+}
+
+.col-md-6 h1 {
+    margin-top: 15px;
+}
+
+.col-md-6 p {
+    text-align: justify;
+}
+
+.carousel-inner img {
+    height: 400px;
+}
+
+.btn-dark {
+    width: 100px;
+    margin-bottom: 10px
+}
+
+@media (min-width: 768px) {
+    .carousel-item img {
+        max-width: 400px; /* Membatasi lebar maksimal gambar pada layar besar */
+    }
+}
+
+@media (max-width: 767px) {
+    .carousel-item img {
+        max-width: 100%; /* Pada layar kecil, gambar mengambil 100% lebar */
+    }
+}
+
+
+
